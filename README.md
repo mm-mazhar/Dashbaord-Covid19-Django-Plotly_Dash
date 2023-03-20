@@ -37,8 +37,6 @@ Activate the virtual environment: `source venv/bin/activate` or `venv/Scripts/ac
 
 Install Dependencies: `pip install -r requirements.txt` 
 
-Run the app: `python manage.py runserver`
-
 waitress-serve --listen=127.0.0.1:8000 app.wsgi:application
 
 ### Optional
