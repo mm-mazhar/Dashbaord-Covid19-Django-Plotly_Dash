@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn app.wsgi
+web: waitress-serve --port=$PORT app.wsgi:application
