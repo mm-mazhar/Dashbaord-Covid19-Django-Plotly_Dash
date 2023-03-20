@@ -145,7 +145,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            'hosts': [("covid-django-dashapp.onrender.com", "127.0.0.1", "localhost", "0.0.0.0:8000", "*", 6379),],
+            'hosts': [("covid-django-dashapp.onrender.com", "127.0.0.1", "localhost", "0.0.0.0:8000", "*", 6379, "web-production-f4ad6.up.railway.app"),],
             # 'hosts': [("*", "127.0.0.1", "localhost", 6379),],
         },
     },
