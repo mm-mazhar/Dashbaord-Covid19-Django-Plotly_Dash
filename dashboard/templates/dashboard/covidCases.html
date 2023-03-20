@@ -1,0 +1,66 @@
+{% extends 'cases.html' %}
+{% load static %}
+
+{% block lastUpdated %}
+    <div>
+        <h6>Last updated: {{ lastUpdated }}</h6> <!--from views.py (dict=>key) {'lastUpdated': last_updated}-->
+    </div>
+{% endblock lastUpdated %}
+
+{% block globalCases %}
+    <div>
+        <p>{{ globalCases }}</p>
+    </div>
+{% endblock globalCases %}
+
+{% block percentChangeConfirmed %}
+    <div>
+        <p>{{ percentChangeConfirmed }}</p>
+    </div>
+{% endblock percentChangeConfirmed %}
+
+{% block globalDeaths %}
+    <div>
+        <p>{{ globalDeaths }}</p>
+    </div>
+{% endblock globalDeaths %}
+
+{% block percentChangeDeaths %}
+    <div>
+        <p>{{ percentChangeDeaths }}</p>
+    </div>
+{% endblock percentChangeDeaths %}
+
+{% block globalRecovered %}
+    <div>
+        <p>{{ globalRecovered }}</p>
+    </div>
+{% endblock globalRecovered %}
+
+{% block percentChangeRecovered %}
+    <div>
+        <p>{{ percentChangeRecovered }}</p>
+    </div>
+{% endblock percentChangeRecovered %}
+
+{% block globalActive %}
+    <div>
+        <p>{{ globalActive }}</p>
+    </div>
+{% endblock globalActive %}
+
+{% block percentChangeActive %}
+    <div>
+        <p>{{ percentChangeActive }}</p>
+    </div>
+{% endblock percentChangeActive %}
+
+{% block content %}
+
+    {% load plotly_dash %}
+    <div class="{% plotly_class name='covidDashboard' %} card" style = "background-color: #212529">
+    {% plotly_app name='covidDashboard' ratio=0.65 %}
+    </div>
+
+{% endblock content %}
+

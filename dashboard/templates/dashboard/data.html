@@ -1,0 +1,9 @@
+{% extends 'data_index.html' %}
+{% load static %}
+
+{% block data %}
+{% load plotly_dash %}
+<div class="{% plotly_class name='dtables' %} card" style = "background-color: #212529">
+{% plotly_app name='dtables' ratio=1.46 %}
+</div>
+{% endblock data %}

@@ -1,0 +1,114 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>COVID-19 Cases</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+  <!--Bootstrap 5-->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!-- Custome Style and JS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'css/stylePlotlyDash.css' %}"> -->
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sidebar Menu Hover</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+	<!-- <link rel="stylesheet" href="assets/style.css"> -->
+</head>
+<body>
+	<!--SideBar-->
+	{% include 'partials/_sidebar.html' %}
+	<!--/SideBar-->
+	<!--Main Content-->
+	<div class="content">
+    <!--Top Row-->
+    <section class="pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            <h4>Track COVID-19 CASES</h4>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 text-warning">
+              {% block lastUpdated %}{% endblock lastUpdated %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/Top Row-->
+    <!--Cards Row-->
+    <section class="p-1">
+      <div class="container-fluid">
+        <div class="row text-center gy-1">
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-warning">
+                <h5 class="card-title text-light">Global Cases</h5>
+                <h1 class="card-text">{% block globalCases %}{% endblock globalCases %}</h1>
+                <h6 class="card-text">{% block percentChangeConfirmed %}{% endblock percentChangeConfirmed %}</h6>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-danger">
+                <h5 class="card-title text-light">Global Deaths</h5>
+                <h1 class="card-text">{% block globalDeaths %}{% endblock globalDeaths %}</h1>
+                <h6 class="card-text">{% block percentChangeDeaths %}{% endblock percentChangeDeaths %}</h6>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-success">
+                <h5 class="card-title text-light">Global Recovered</h5>
+                <h1 class="card-text">{% block globalRecovered %} {% endblock globalRecovered %}</h1>
+                <h6 class="card-text">{% block percentChangeRecovered %}{% endblock percentChangeRecovered %}</h6>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-warning">
+                <h5 class="card-title text-light">Global Active</h5>
+                <h1 class="card-text">{% block globalActive %}{% endblock globalActive %}</h1>
+                <h6 class="card-text">{% block percentChangeActive %}{% endblock percentChangeActive %}</h6>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/Cards Row-->
+    <!--Graphs Row-->
+    <section class="p-1">
+      <div class="container-fluid">
+        <div class="row gy-1">
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            {% block content %}{% endblock content %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/ Graphs Row-->
+    </div>
+	<!--/Main Content-->
+</body>
+</html>
+<!-- partial -->
+</body>
+</html>

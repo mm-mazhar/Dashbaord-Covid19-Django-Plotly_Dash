@@ -1,0 +1,9 @@
+{% extends 'death_Race.html' %}
+{% load static %}
+
+{% block deathRaceGraph %}
+{% load plotly_dash %}
+<div class="{% plotly_class name='animationDeathGraph' %} card" style = "background-color: #212529">
+{% plotly_app name='animationDeathGraph' ratio=0.36 %}
+</div>
+{% endblock deathRaceGraph %}

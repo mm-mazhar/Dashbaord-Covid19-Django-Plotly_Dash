@@ -1,0 +1,36 @@
+{% extends 'vaccines_Analysis.html' %}
+{% load static %}
+
+{% block lastUpdatedVaccines %}
+    <div>
+        <h6>Last updated: {{ lastUpdatedVaccines }}</h6> <!--from views.py (dict=>key) 'lastUpdatedVaccines': last_updated_vaccines-->
+    </div>
+{% endblock lastUpdatedVaccines %}
+
+{% block vaccinesAnalysis %}
+
+    {% load plotly_dash %}
+    <div class="{% plotly_class name='vaccinesAnalysis' %} card" style = "background-color: #212529">
+    {% plotly_app name='vaccinesAnalysis' ratio=0.43 %}
+    </div>
+
+{% endblock vaccinesAnalysis %}
+
+{% block vaccinesByAge %}
+
+    {% load plotly_dash %}
+    <div class="{% plotly_class name='vaccinesByAge' %} card" style = "background-color: #212529">
+    {% plotly_app name='vaccinesByAge' ratio=0.75 %}
+    </div>
+
+{% endblock vaccinesByAge %}
+
+
+{% block vaccinesByManufacturer %}
+
+    {% load plotly_dash %}
+    <div class="{% plotly_class name='vaccinesByManufacturer' %} card" style = "background-color: #212529">
+    {% plotly_app name='vaccinesByManufacturer' ratio=0.75 %}
+    </div>
+
+{% endblock vaccinesByManufacturer %}
