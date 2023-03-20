@@ -1,1 +1,1 @@
-web: waitress-serve --listen=web-production-f4ad6.up.railway.app app.wsgi:application
+web: waitress-serve app.wsgi:application
