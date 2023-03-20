@@ -40,7 +40,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-# ALLOWED_HOSTS = ["127.0.0.1:8000", "localhost", "0.0.0.0:8000", "*"]
 ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
 if ALLOWED_HOSTS_ENV:
     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
@@ -146,7 +145,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            'hosts': [("covid19-uzzk.onrender.com", "127.0.0.1", "localhost", "0.0.0.0:8000", "*", 6379),],
+            'hosts': [("covid-django-dashapp.onrender.com", "127.0.0.1", "localhost", "0.0.0.0:8000", "*", 6379),],
             # 'hosts': [("*", "127.0.0.1", "localhost", 6379),],
         },
     },
