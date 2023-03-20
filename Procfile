@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT app.wsgi:application
+web: waitress-serve --listen=web-production-f4ad6.up.railway.app app.wsgi:application
